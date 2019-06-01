@@ -35,7 +35,7 @@ class _HomePageBodyState extends State<HomePageBody> {
 
 getAppBar() {
   return AppBar(
-    backgroundColor: Colors.green,
+    backgroundColor: Colors.lightGreen,
     title: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
