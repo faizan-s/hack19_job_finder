@@ -15,7 +15,7 @@ class JobDetails extends StatelessWidget {
             child: new Image.network(
           job.logo,
           fit: BoxFit.cover,
-          height: 92.0,
+          height: 85.0,
         )),
       ),
     );
@@ -24,7 +24,7 @@ class JobDetails extends StatelessWidget {
       return new Container(
         alignment: FractionalOffset.centerLeft,
         child: new Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          new Text(job.organisation,
+          new Text(value,
               style: const TextStyle(
                   color: const Color(0xffb6b2df),
                   fontSize: 14.0,
@@ -34,51 +34,46 @@ class JobDetails extends StatelessWidget {
     }
 
     final jobCardContent = new Container(
-      margin: new EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+      margin: new EdgeInsets.fromLTRB(6.0, 16.0, 6.0, 16.0),
       alignment: FractionalOffset.centerLeft,
-      // constraints: new BoxConstraints.,
-      width: 150,
+      width: 200,
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new Container(height: 4.0),
-          new Text(job.jobName,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600)),
-          new Container(height: 10.0),
-          new Text(job.location,
-              style: const TextStyle(
-                  color: const Color(0xffb6b2df),
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w400)),
           new Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Expanded(
-                  flex: 1,
-                  child: _jobValue(
-                    value: job.location,
-                    // image: 'assets/img/ic_distance.png'
-                  )),
-              new Container(
-                width: 8.0,
-              ),
-              new Expanded(
-                  flex: 1,
-                  child: _jobValue(
-                    value: job.lastUpdated,
-                    // image: 'assets/img/ic_gravity.png'
-                  ))
+              new Text(job.organisation,
+                  textAlign: TextAlign.start,
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600)),
+              new Text(job.location,
+                  textAlign: TextAlign.end,
+                  style: const TextStyle(
+                      color: const Color(0xffb6b2df),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w400))
             ],
           ),
+          new Expanded(
+              flex: 1,
+              child: _jobValue(
+                value: job.jobName,
+                // image: 'assets/img/ic_distance.png'
+              )),
+          new Container(
+            width: 8.0,
+          ),
+          new Expanded(
+              flex: 1,
+              child: _jobValue(
+                value: job.lastUpdated,
+                // image: 'assets/img/ic_gravity.png'
+              )),
         ],
       ),
-    );
-
-    final jobCard = new Container(
-      child: jobCardContent,
     );
 
     return new GestureDetector(
@@ -88,11 +83,10 @@ class JobDetails extends StatelessWidget {
         //               pageBuilder: (_, __, ___) => new DetailPage(job)),
         //         )
         //     : null,
-      child: new Container(
-      height: 124.0,
-      // padding: new EdgeInsets.only(left: 16.0, top: 10),
+        child: new Container(
+      height: 100.0,
       decoration: new BoxDecoration(
-        color: new Color(0xFF333366),
+        color: Colors.white,
         shape: BoxShape.rectangle,
         borderRadius: new BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[
@@ -104,13 +98,15 @@ class JobDetails extends StatelessWidget {
         ],
       ),
       margin: const EdgeInsets.symmetric(
-        vertical: 16.0,
-        horizontal: 24.0,
+        vertical: 12.0,
+        horizontal: 16.0,
       ),
       child: new Row(
         children: <Widget>[
           jobThumbnail,
-          jobCard,
+          new Container(
+            child: jobCardContent,
+          ),
         ],
       ),
     ));
