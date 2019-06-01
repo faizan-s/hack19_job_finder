@@ -41,7 +41,7 @@ class JobsList extends StatelessWidget {
   Widget _buildJobs(BuildContext context, int index) {
     print(jobs[index]);
     return Container(
-        color: const Color(0xFF736AB7), child: new JobDetails(jobs[index]));
+        color: const Color(0xFFECEEF2), child: new JobDetails(jobs[index]));
   }
 
   @override
