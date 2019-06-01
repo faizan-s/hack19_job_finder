@@ -85,42 +85,50 @@ getDrawer(context) {
             leading: Icon(Icons.account_circle),
             title: Text('Profile'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                '/profile'
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.recent_actors),
             title: Text('Recomended Jobs'),
             onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.storage),
-            title: Text('Profile Performance'),
-            onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                '/recomendedjobs'
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.message),
             title: Text('Recruiter Messages'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                '/recruitermessages'
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.account_circle),
             title: Text('Application Status'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                '/applicationstatus'
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                '/settings'
+              );
             },
           ),
           Divider(
