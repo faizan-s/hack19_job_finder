@@ -70,14 +70,20 @@ getDrawer(context) {
             leading: Icon(Icons.account_circle),
             title: Text('Profile'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                '/registration'
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.recent_actors),
             title: Text('Recomended Jobs'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                '/recomendations'
+              );
             },
           ),
           ListTile(

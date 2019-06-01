@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hack19_job_finder/pages/Registeration.dart';
 import 'package:hack19_job_finder/pages/home.dart';
+import 'package:hack19_job_finder/pages/recomendations.dart';
 import 'package:hack19_job_finder/theme.dart' as Theme;
 
 
@@ -25,7 +27,11 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Theme.Colors.homeBackgroundColor,
         primarySwatch: Colors.blue,
       ),
-      home: new HomePage()
+      home: new HomePage(),
+      routes: {
+        '/registration': (context) => RegisterForm(),
+        '/recomendations': (context) => Recomendations()
+      },
     );
   }
 }
