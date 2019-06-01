@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hack19_job_finder/theme.dart' as Theme;
-
+import 'package:http/http.dart' as http;
+import 'package:hack19_job_finder/model/job_model.dart';
 
 class Search extends StatelessWidget{
 
@@ -27,9 +28,7 @@ class Search extends StatelessWidget{
                     ),
                     onPressed: null),
                 suffixIcon: IconButton(
-                  onPressed: (){
-                    //@todo onPress
-                  },
+                  onPressed: fetchData,
                   icon: Icon(
                     Icons.search,
                     color: Theme.Colors.searchTextColor,
@@ -42,4 +41,11 @@ class Search extends StatelessWidget{
       ),
       );
   }
+}
+
+void fetchData() {
+  const url = 'https://jobs.search.gov/jobs/search.json?query=' + 'surgeon';
+  http.get(url).then((result) {
+    print( result.body);
+  });
 }

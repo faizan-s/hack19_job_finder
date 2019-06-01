@@ -10,7 +10,7 @@ import 'package:http/http.dart' as http;
 class LandingPageBody extends StatelessWidget {
   Future<List<Job>> fetchJobs(http.Client client) async {
     final response =
-        await client.get('http://www.mocky.io/v2/5cf21bec3300001e17d0d040');
+        await client.get('https://jobs.search.gov/jobs/search.json?query=' + 'surgeon');
     return compute(parseJobs, response.body);
   }
 
