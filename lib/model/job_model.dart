@@ -6,7 +6,6 @@ class Job {
   final String lastUpdated;
   final String logo;
   final bool isFullTime;
-  final String url;
 
   const Job(
       {this.id,
@@ -15,8 +14,7 @@ class Job {
       this.organisation,
       this.lastUpdated,
       this.logo,
-      this.isFullTime,
-      this.url});
+      this.isFullTime});
   factory Job.fromJson(Map<String, dynamic> json) {
     print(json);
     return Job(
@@ -26,8 +24,7 @@ class Job {
         organisation: json['organization_name'] as String,
         lastUpdated: '2 Days ago',
         logo: 'http://pluspng.com/img-png/airbnb-logo-png-airbnb-logo-1600.png',
-        isFullTime: json['isFullTime'] as bool,
-        url: json['url'] as String);
+        isFullTime: json['isFullTime'] as bool);
   }
 }
 

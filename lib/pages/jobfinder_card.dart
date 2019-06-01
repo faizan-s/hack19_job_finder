@@ -35,33 +35,33 @@ class JobCard extends StatelessWidget {
       );
     }
 
-    final jobCardContent = new Container(
+    final jobCardContent = new Flexible(
+        child: new Container(
       margin: new EdgeInsets.fromLTRB(6.0, 16.0, 6.0, 16.0),
       alignment: FractionalOffset.centerLeft,
       width: 220,
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          new Container(height: 4.0),
-          new Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            textDirection: TextDirection.ltr,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              new Text(job.organisation,
+              new Expanded(
+                flex: 1,
+                child: new Text(job.organisation,
                   textAlign: TextAlign.start,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600)),
-              Spacer(flex: 3),
-              new Text(job.location,
-                  textAlign: TextAlign.end,
-                  style: const TextStyle(
-                      color: const Color(0xffb6b2df),
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w400))
-            ],
+              ),
+              Spacer(flex: 1),
+          new Expanded(
+              child: new Text(job.location,
+              textAlign: TextAlign.end,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                  color: const Color(0xffb6b2df),
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w400)),
           ),
           new Expanded(
               flex: 1,
@@ -80,6 +80,7 @@ class JobCard extends StatelessWidget {
               )),
         ],
       ),
+    ),
     );
 
     return new GestureDetector(
@@ -88,7 +89,7 @@ class JobCard extends StatelessWidget {
                   pageBuilder: (_, __, ___) => new JobDetails(job)),
             ),
         child: new Container(
-          height: 100.0,
+          height: 120.0,
           decoration: new BoxDecoration(
             color: Colors.white,
             shape: BoxShape.rectangle,
