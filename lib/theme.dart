@@ -30,6 +30,6 @@ class TextStyles {
   static const TextStyles SearchBoxStyle = const TextStyles(
 
   );
-  
+
 
 }
