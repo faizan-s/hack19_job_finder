@@ -72,14 +72,42 @@ getDrawer(context) {
         children: <Widget>[
           ListTile(
             leading: Icon(Icons.account_circle),
-            title: Text('Registration'),
+            title: Text('Profile'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.recent_actors),
+            title: Text('Recomended Jobs'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.storage),
+            title: Text('Profile Performance'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.message),
+            title: Text('Recruiter Messages'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: Icon(Icons.account_circle),
-            title: Text('Resume'),
+            title: Text('Application Status'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('Settings'),
             onTap: () {
               Navigator.pop(context);
             },
