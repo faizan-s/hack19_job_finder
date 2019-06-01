@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: getAppBar(),
+      drawer: getDrawer(context),
       body: new HomePageBody(),
     );
   }
@@ -34,20 +35,11 @@ class _HomePageBodyState extends State<HomePageBody> {
 
 getAppBar() {
   return AppBar(
-    automaticallyImplyLeading: false, // Don't show the leading button
     backgroundColor: Colors.white,
     title: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        IconButton(
-          alignment: Alignment.centerLeft,
-          color: Colors.blue,
-          icon: new Icon(Icons.menu), 
-          onPressed:() {
-
-          }
-        ),
         Container(
             alignment: Alignment.center,
             width: 50.0,
@@ -72,12 +64,31 @@ getAppBar() {
   ); 
 }
 
-getMenuList() {
+getDrawer(context) {
   return Drawer(
-      child: Column(
-          children: <Widget>[
-            Text('aaa')
-          ]
-      )
+    child: Container(
+      color: Colors.white,
+      child: ListView(
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text('Registration'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text('Resume'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          Divider(
+            height: 2.0,
+          ),
+        ],
+      ),
+    )
   );
 }
