@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack19_job_finder/pages/jobfinder_list.dart';
 
 class HomePage extends StatelessWidget {
 
@@ -23,7 +24,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   Widget build(BuildContext context) {
     return new Column(
       children: <Widget>[
-        new Text("Job Finder"),
+        LandingPageBody(),
       ],
     );
   }
