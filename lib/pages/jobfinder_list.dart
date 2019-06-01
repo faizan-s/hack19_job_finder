@@ -4,13 +4,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hack19_job_finder/model/job_model.dart';
-import 'package:hack19_job_finder/pages/jobfinder_details.dart';
+import 'package:hack19_job_finder/pages/jobfinder_card.dart';
 import 'package:http/http.dart' as http;
 
 class LandingPageBody extends StatelessWidget {
   Future<List<Job>> fetchJobs(http.Client client) async {
     final response =
-        await client.get('http://www.mocky.io/v2/5cf21bec3300001e17d0d040');
+        await client.get('http://www.mocky.io/v2/5cf23031330000e016d0d062');
     return compute(parseJobs, response.body);
   }
 
@@ -41,7 +41,7 @@ class JobsList extends StatelessWidget {
   Widget _buildJobs(BuildContext context, int index) {
     print(jobs[index]);
     return Container(
-        color: const Color(0xFFECEEF2), child: new JobDetails(jobs[index]));
+        color: const Color(0xFFECEEF2), child: new JobCard(jobs[index]));
   }
 
   @override
