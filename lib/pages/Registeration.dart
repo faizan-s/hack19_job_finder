@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 
 class RegisterForm extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.blue),
-        backgroundColor: Colors.white,
-        title: Text('Registration',style: TextStyle(color: Colors.black))
-      ),     
-      body: new RegisterFormState(),
+          iconTheme: IconThemeData(color: Colors.blue),
+          backgroundColor: Colors.white,
+          title: Text('Registration', style: TextStyle(color: Colors.black))),
+      body: new Container(
+          padding: EdgeInsets.all(20),
+          decoration: new BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.rectangle,
+            borderRadius: new BorderRadius.circular(8.0),
+            boxShadow: <BoxShadow>[
+              new BoxShadow(
+                color: Colors.black12,
+                blurRadius: 10.0,
+                offset: new Offset(0.0, 10.0),
+              ),
+            ],
+          ),
+          child: new RegisterFormState()),
     );
   }
 }
-
-
-
 
 class RegisterFormState extends StatefulWidget {
   const RegisterFormState({Key key}) : super(key: key);
@@ -33,8 +42,8 @@ class _RegisterFormState extends State<RegisterFormState> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
             decoration: const InputDecoration(
@@ -57,7 +66,7 @@ class _RegisterFormState extends State<RegisterFormState> {
               }
             },
           ),
-           const SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           TextFormField(
             decoration: const InputDecoration(
               labelText: 'Full name',
@@ -69,7 +78,6 @@ class _RegisterFormState extends State<RegisterFormState> {
             },
           ),
           const SizedBox(height: 16.0),
-
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Row(
