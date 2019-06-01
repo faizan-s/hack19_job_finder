@@ -25,7 +25,6 @@ class _HomePageBodyState extends State<HomePageBody> {
   Widget build(BuildContext context) {
     return new Column(
       children: <Widget>[
-        new Text("Job Finder"),
         new Search(),
         LandingPageBody()
       ],
