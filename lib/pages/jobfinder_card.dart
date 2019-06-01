@@ -66,8 +66,9 @@ class JobCard extends StatelessWidget {
             ),
             new Expanded(
                 flex: 1,
-                child: _jobValue(
-                  value: job.jobName,
+                child: new Text(
+                  job.jobName,
+                  overflow: TextOverflow.ellipsis,
                   // image: 'assets/img/ic_distance.png'
                 )),
             new Container(

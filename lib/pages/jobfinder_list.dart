@@ -6,11 +6,12 @@ import 'package:flutter/widgets.dart';
 import 'package:hack19_job_finder/model/job_model.dart';
 import 'package:hack19_job_finder/pages/jobfinder_card.dart';
 import 'package:http/http.dart' as http;
+import 'package:hack19_job_finder/common/query.dart';
 
 class LandingPageBody extends StatelessWidget {
   Future<List<Job>> fetchJobs(http.Client client) async {
     final response =
-        await client.get('https://jobs.search.gov/jobs/search.json?query=' + 'surgeon');
+        await client.get('https://jobs.search.gov/jobs/search.json?query=' + Query.queryString);
     return compute(parseJobs, response.body);
   }
 

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hack19_job_finder/theme.dart' as Theme;
-import 'package:http/http.dart' as http;
 import 'package:hack19_job_finder/model/job_model.dart';
+import 'package:hack19_job_finder/common/query.dart';
+import 'package:hack19_job_finder/pages/jobfinder_list.dart';
+import 'package:http/http.dart' as http;
+
 
 class Search extends StatelessWidget{
 
   final String searchString = '';
+  TextEditingController textController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +21,7 @@ class Search extends StatelessWidget{
           color: Theme.Colors.appBackground,
           borderRadius: new BorderRadius.circular(25.0),
           child: new TextField(
+              controller: textController,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(10.0),
                 border: InputBorder.none,
@@ -28,7 +33,7 @@ class Search extends StatelessWidget{
                     ),
                     onPressed: null),
                 suffixIcon: IconButton(
-                  onPressed: fetchData,
+                  onPressed: () { fetchData(context); },
                   icon: Icon(
                     Icons.search,
                     color: Theme.Colors.searchTextColor,
@@ -41,11 +46,18 @@ class Search extends StatelessWidget{
       ),
       );
   }
-}
 
-void fetchData() {
-  const url = 'https://jobs.search.gov/jobs/search.json?query=' + 'surgeon';
-  http.get(url).then((result) {
-    print( result.body);
-  });
+  void fetchData(context) {
+    print('I am clicked');
+    Query.queryString = textController.text;
+    print(Query.queryString );
+    String url ='https://jobs.search.gov/jobs/search.json?query=' + Query.queryString;
+    http.get(url).then((result) {
+      LandingPageBody.parseJobs(result.body);
+      Navigator.pushNamed(
+          context,
+          '/home'
+      );
+    });
+  }
 }

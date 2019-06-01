@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       home: new HomePage(),
       routes: {
+        '/home': (context) => HomePage(),
         '/profile': (context) => Profile(),
         '/settings': (context) => Settings(),
         '/recruitermessages': (context) => RecruiterMessages(),
