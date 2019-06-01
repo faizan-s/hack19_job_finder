@@ -1,14 +1,31 @@
 import 'package:flutter/material.dart';
 
+class RegisterForm extends StatelessWidget {
 
-class RegisterForm extends StatefulWidget {
-  const RegisterForm({Key key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.blue),
+        backgroundColor: Colors.white,
+        title: Text('Registeration',style: TextStyle(color: Colors.black))
+      ),     
+      body: new RegisterFormState(),
+    );
+  }
+}
+
+
+
+
+class RegisterFormState extends StatefulWidget {
+  const RegisterFormState({Key key}) : super(key: key);
 
   @override
   _RegisterFormState createState() => _RegisterFormState();
 }
 
-class _RegisterFormState extends State<RegisterForm> {
+class _RegisterFormState extends State<RegisterFormState> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _agreedToTOS = true;
 

@@ -121,6 +121,16 @@ getDrawer(context) {
               );
             },
           ),
+           ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text('registeration'),
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                '/registeration'
+              );
+            },
+          ),
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
@@ -130,7 +140,7 @@ getDrawer(context) {
                 '/settings'
               );
             },
-          ),
+          ),          
           Divider(
             height: 2.0,
           ),

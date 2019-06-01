@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/recruitermessages': (context) => RecruiterMessages(),
         '/recomendedjobs': (context) => RecomendedJobs(),
         '/applicationstatus': (context) => ApplicationStatus(),
+        '/registeration': (context) => RegisterForm(),
       },
     );
   }
