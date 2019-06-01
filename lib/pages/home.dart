@@ -35,33 +35,38 @@ class _HomePageBodyState extends State<HomePageBody> {
 
 getAppBar() {
   return AppBar(
-    backgroundColor: Colors.blue,
-      actions: <Widget>[
+    automaticallyImplyLeading: false, // Don't show the leading button
+    backgroundColor: Colors.white,
+    title: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
         IconButton(
+          alignment: Alignment.centerLeft,
+          color: Colors.blue,
           icon: new Icon(Icons.menu), 
           onPressed: (){}
         ),
-        Padding(
-          padding: EdgeInsets.only(right: 10.0),
-          child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
+        Container(
+            alignment: Alignment.center,
+            width: 100.0,
+            height: 100.0,
+            decoration: new BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white, //remove this when you add image.
-            ),
-          ),
-        ), 
-        IconButton(icon: new Icon(Icons.notifications), onPressed: (){}),
-      ],
-      iconTheme: IconThemeData(
-        color: Colors.white,
-      ),
-      textTheme: TextTheme(
-        title: TextStyle(
-          color: Colors.white,
-          fontSize: 20.0,
+              image: new DecorationImage(
+                  fit: BoxFit.fill,
+                  image: new NetworkImage(
+                      "https://media.licdn.com/dms/image/C5103AQEq2T_vscc2qw/profile-displayphoto-shrink_200_200/0?e=1562198400&v=beta&t=8OihbgEfStLPH7TT7fr2pPQiaYt7PfJeozPpvU6vlKs",
+                  )
+              )
+          )),
+        IconButton(
+          alignment: Alignment.centerRight,
+          color: Colors.blue,
+          icon: new Icon(Icons.notifications), 
+          onPressed: (){}
         )
-      ),
-  )  ; 
+      ],
+    )  
+  ); 
 }
