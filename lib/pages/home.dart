@@ -50,8 +50,8 @@ getAppBar() {
         ),
         Container(
             alignment: Alignment.center,
-            width: 100.0,
-            height: 100.0,
+            width: 50.0,
+            height: 50.0,
             decoration: new BoxDecoration(
               shape: BoxShape.circle,
               image: new DecorationImage(
