@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: getAppBar(),
+      appBar: getAppBar(context),
       drawer: getDrawer(context),
       body: new HomePageBody(),
     );
@@ -33,7 +33,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   }
 }
 
-getAppBar() {
+getAppBar(context) {
   return AppBar(
     backgroundColor: Colors.white,
     iconTheme: new IconThemeData(color: Colors.blue),
@@ -54,10 +54,25 @@ getAppBar() {
       IconButton(
         alignment: Alignment.centerRight,
         icon: new Icon(Icons.notifications), 
-        onPressed: (){}
-      )
+        onPressed: () {
+          _showAlert(context, 'No new notification!');
+        },
+      ),
     ],  
   ); 
+}
+
+Future _showAlert(BuildContext context, String message) async {
+  return showDialog(
+      context: context,
+      child: new AlertDialog(
+        title: new Text(message),
+        actions: <Widget>[
+          new FlatButton(onPressed: () => Navigator.pop(context), child: new Text('Ok'))
+        ],
+      )
+
+  );
 }
 
 getDrawer(context) {
