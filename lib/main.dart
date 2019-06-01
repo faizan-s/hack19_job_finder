@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hack19_job_finder/pages/Registeration.dart';
+import 'package:hack19_job_finder/pages/applicationstatus.dart';
 import 'package:hack19_job_finder/pages/home.dart';
-import 'package:hack19_job_finder/pages/recomendations.dart';
+import 'package:hack19_job_finder/pages/profile.dart';
+import 'package:hack19_job_finder/pages/recomendedjobs.dart';
+import 'package:hack19_job_finder/pages/recruitermessages.dart';
+import 'package:hack19_job_finder/pages/settings.dart';
 import 'package:hack19_job_finder/theme.dart' as Theme;
 
 
@@ -29,8 +33,11 @@ class MyApp extends StatelessWidget {
       ),
       home: new HomePage(),
       routes: {
-        '/registration': (context) => RegisterForm(),
-        '/recomendations': (context) => Recomendations()
+        '/profile': (context) => Profile(),
+        '/settings': (context) => Settings(),
+        '/recruitermessages': (context) => RecruiterMessages(),
+        '/recomendedjobs': (context) => RecomendedJobs(),
+        '/applicationstatus': (context) => ApplicationStatus(),
       },
     );
   }

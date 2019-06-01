@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Recomendations extends StatelessWidget {
+class ApplicationStatus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
@@ -8,7 +8,7 @@ class Recomendations extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.blue),
         backgroundColor: Colors.white,
-        title: Text('Recomendation',style: TextStyle(color: Colors.black))
+        title: Text('Application Status',style: TextStyle(color: Colors.black))
       )
     );
   }
