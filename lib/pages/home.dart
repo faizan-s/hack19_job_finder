@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: getAppBar(),
+      drawer: getDrawer(context),
       body: new HomePageBody(),
     );
   }
@@ -34,28 +35,21 @@ class _HomePageBodyState extends State<HomePageBody> {
 
 getAppBar() {
   return AppBar(
-    automaticallyImplyLeading: false, // Don't show the leading button
     backgroundColor: Colors.white,
     title: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        IconButton(
-          alignment: Alignment.centerLeft,
-          color: Colors.blue,
-          icon: new Icon(Icons.menu), 
-          onPressed: (){}
-        ),
         Container(
             alignment: Alignment.center,
-            width: 100.0,
-            height: 100.0,
+            width: 50.0,
+            height: 50.0,
             decoration: new BoxDecoration(
               shape: BoxShape.circle,
               image: new DecorationImage(
                   fit: BoxFit.fill,
                   image: new NetworkImage(
-                      "https://media.licdn.com/dms/image/C5103AQEq2T_vscc2qw/profile-displayphoto-shrink_200_200/0?e=1562198400&v=beta&t=8OihbgEfStLPH7TT7fr2pPQiaYt7PfJeozPpvU6vlKs",
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8fhxpPX98Y2vcd6P230As-0WWa8BPrhRu8TL3rZeFZyUZT_ox",
                   )
               )
           )),
@@ -68,4 +62,33 @@ getAppBar() {
       ],
     )  
   ); 
+}
+
+getDrawer(context) {
+  return Drawer(
+    child: Container(
+      color: Colors.white,
+      child: ListView(
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text('Registration'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text('Resume'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          Divider(
+            height: 2.0,
+          ),
+        ],
+      ),
+    )
+  );
 }
