@@ -123,7 +123,7 @@ getDrawer(context) {
           ),
            ListTile(
             leading: Icon(Icons.account_circle),
-            title: Text('registeration'),
+            title: Text('Registration'),
             onTap: () {
               Navigator.pushNamed(
                 context,

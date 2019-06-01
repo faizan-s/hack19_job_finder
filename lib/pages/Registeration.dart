@@ -8,7 +8,7 @@ class RegisterForm extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.blue),
         backgroundColor: Colors.white,
-        title: Text('Registeration',style: TextStyle(color: Colors.black))
+        title: Text('Registration',style: TextStyle(color: Colors.black))
       ),     
       body: new RegisterFormState(),
     );
