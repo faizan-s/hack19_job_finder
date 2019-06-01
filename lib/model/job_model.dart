@@ -24,7 +24,7 @@ class Job {
         organisation: json['organization_name'] as String,
         lastUpdated: '2 Days ago',
         logo: 'http://pluspng.com/img-png/airbnb-logo-png-airbnb-logo-1600.png',
-        isFullTime: json['isFullTime'] as bool);
+        isFullTime: true);
   }
 }
 

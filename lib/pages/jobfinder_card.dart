@@ -37,51 +37,51 @@ class JobCard extends StatelessWidget {
     }
 
     final jobCardContent = new Flexible(
-        child: new Container(
-      margin: new EdgeInsets.fromLTRB(6.0, 16.0, 6.0, 16.0),
-      alignment: FractionalOffset.centerLeft,
-      width: 220,
-      child: new Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-              new Expanded(
-                flex: 1,
-                child: new Text(job.organisation,
+      child: new Container(
+        margin: new EdgeInsets.fromLTRB(6.0, 16.0, 6.0, 16.0),
+        alignment: FractionalOffset.centerLeft,
+        width: 220,
+        child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            new Expanded(
+              flex: 1,
+              child: new Text(job.organisation,
                   textAlign: TextAlign.start,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600)),
-              ),
-              Spacer(flex: 1),
-          new Expanded(
+            ),
+            Spacer(flex: 1),
+            new Expanded(
               child: new Text(job.location,
-              textAlign: TextAlign.end,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                  color: const Color(0xffb6b2df),
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w400)),
-          ),
-          new Expanded(
-              flex: 1,
-              child: _jobValue(
-                value: job.jobName,
-                // image: 'assets/img/ic_distance.png'
-              )),
-          new Container(
-            width: 8.0,
-          ),
-          new Expanded(
-              flex: 1,
-              child: _jobValue(
-                value: job.lastUpdated,
-                // image: 'assets/img/ic_gravity.png'
-              )),
-        ],
+                  textAlign: TextAlign.end,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                      color: const Color(0xffb6b2df),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w400)),
+            ),
+            new Expanded(
+                flex: 1,
+                child: _jobValue(
+                  value: job.jobName,
+                  // image: 'assets/img/ic_distance.png'
+                )),
+            new Container(
+              width: 8.0,
+            ),
+            new Expanded(
+                flex: 1,
+                child: _jobValue(
+                  value: job.lastUpdated,
+                  // image: 'assets/img/ic_gravity.png'
+                )),
+          ],
+        ),
       ),
-    ),
     );
 
     return new GestureDetector(

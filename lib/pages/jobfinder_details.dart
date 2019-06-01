@@ -49,7 +49,7 @@ class JobDetails extends StatelessWidget {
         children: <Widget>[
           new Container(
             padding: new EdgeInsets.symmetric(vertical: 18.0),
-            height: 230.0,
+            height: 250.0,
             decoration: new BoxDecoration(
               color: Colors.white,
               shape: BoxShape.rectangle,
