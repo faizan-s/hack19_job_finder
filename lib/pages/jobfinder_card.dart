@@ -14,8 +14,9 @@ class JobCard extends StatelessWidget {
       child: new Hero(
         tag: "job-hero-${job.id}", // for animation
         child: new Container(
-            child: new Image.network(
-          job.logo,
+            child: new Image.asset(
+          'assets/img/company.png',
+          // job.logo,
           fit: BoxFit.cover,
           height: 85.0,
         )),

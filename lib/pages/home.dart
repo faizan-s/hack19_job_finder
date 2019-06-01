@@ -35,7 +35,8 @@ class _HomePageBodyState extends State<HomePageBody> {
 
 getAppBar() {
   return AppBar(
-    backgroundColor: Colors.lightGreen,
+    backgroundColor: Colors.white,
+    iconTheme: new IconThemeData(color: Colors.blue),
     title: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,7 +56,6 @@ getAppBar() {
           )),
         IconButton(
           alignment: Alignment.centerRight,
-          color: Colors.white,
           icon: new Icon(Icons.notifications), 
           onPressed: (){}
         )
