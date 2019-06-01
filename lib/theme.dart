@@ -4,12 +4,16 @@ class Colors {
 
   const Colors();
 
+  static const Color homeBackgroundColor = const Color(0xFFF4F6Fa);
+  static const Color searchTextColor = const Color(0xff8497c7);
+  static const Color appBackground = const Color(0xffFFFFFF);
+  static const Color jobListTitle = const Color(0xff3f4346);
+  static const Color jobListText = const Color(0xffc0c2ce);
 
-  static const Color searchTextColor = const Color(0x008497c7);
-  static const Color appBackground = const Color(0x00FFFFFF);
-  static const Color jobListTitle = const Color(0x003f4346);
-  static const Color jobListText = const Color(0x00c0c2ce);
+}
 
+class Constants {
+  static const String searchPlaceHolder = 'Search Title, Company...';
 }
 
 class Dimens {
@@ -22,6 +26,10 @@ class Dimens {
 class TextStyles {
 
   const TextStyles();
+
+  static const TextStyles SearchBoxStyle = const TextStyles(
+
+  );
 
 //  static const TextStyle appBarTitle = const TextStyle(
 //      color: Colors.appBarTitle,
