@@ -57,6 +57,7 @@ class _RegisterFormState extends State<RegisterFormState> {
           ),
           const SizedBox(height: 16.0),
           TextFormField(
+            obscureText: true,
             decoration: const InputDecoration(
               labelText: 'Password',
             ),
@@ -100,7 +101,7 @@ class _RegisterFormState extends State<RegisterFormState> {
               const Spacer(),
               OutlineButton(
                 highlightedBorderColor: Colors.black,
-                onPressed: _submittable() ? _submit : null,
+                onPressed: _submittable() ? (){ _submit(context);} : null,
                 child: const Text('Register'),
               ),
             ],
@@ -114,9 +115,24 @@ class _RegisterFormState extends State<RegisterFormState> {
     return _agreedToTOS;
   }
 
-  void _submit() {
-    _formKey.currentState.validate();
+  Future _showAlert(BuildContext context, String message) async {
+    return showDialog(
+        context: context,
+        child: new AlertDialog(
+          title: new Text(message),
+          actions: <Widget>[
+            new FlatButton(onPressed: () => Navigator.pop(context), child: new Text('Ok'))
+          ],
+        )
+
+    );
+  }
+
+  void _submit(context) {
     print('Form submitted');
+    if (_formKey.currentState.validate()) {
+      _showAlert(context, 'Registration is completed!');
+    }
   }
 
   void _setAgreedToTOS(bool newValue) {
